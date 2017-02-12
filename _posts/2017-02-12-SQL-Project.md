@@ -6,3 +6,5 @@ summary:    Base Examples for SQL
 ---
 
 Here get examples: https://github.com/duxa/SQL
+
+Base examples http://metanit.com/sharp/entityframework/
