@@ -1,10 +1,10 @@
 # Site settings
-title:       Pixyll
-email:       your_email@example.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
-baseurl:     ""
-url:         "http://pixyll.com"
+title:       Andrej Skoryk
+email:       duxa321@gmail.com
+author:       Andrej Skoryk
+description: "Preparation for the interview"
+baseurl:     "https://duxa.github.io"
+url:         "https://duxa.github.io"
 date_format: "%b %-d, %Y"
 
 # Google services
