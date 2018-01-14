@@ -11,8 +11,18 @@ section.has-light-background, section.has-light-background h1, section.has-light
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #222;
-  background-color: #222; }
+ // background: #124C66;
+  //background-color: #124C66;
+background: #1461a9;
+background: -moz-linear-gradient(-45deg, #1461a9 0%, #0a2a38 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, #1461a9), color-stop(100%, #0a2a38));
+background: -webkit-linear-gradient(-45deg, #1461a9 0%, #0a2a38 100%);
+background: -o-linear-gradient(-45deg, #1461a9 0%, #0a2a38 100%);
+background: -ms-linear-gradient(-45deg, #1461a9 0%, #0a2a38 100%);
+background: linear-gradient(135deg, #1461a9 0%, #0a2a38 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1461a9', endColorstr='#0a2a38', GradientType=1 );
+
+  }
 
 .reveal {
   font-family: "Source Sans Pro", Helvetica, sans-serif;

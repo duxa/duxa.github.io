@@ -4,10 +4,11 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - Slide Transitions</title>
+		<title>TypeScript Innovations</title>
 
 		<link rel="stylesheet" href="../css/reveal.css">
-		<link rel="stylesheet" href="../css/theme/white.css" id="theme">
+		<link rel="stylesheet" href="../css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="assets/css/slides.css">"
 		<style type="text/css" media="screen">
 			.slides section.has-dark-background,
 			.slides section.has-dark-background h3 {
@@ -17,7 +18,7 @@
 			.slides section.has-light-background h3 {
 				color: #222;
 			}
-		</style>
+		</style>		
 	</head>
 
 	<body>
@@ -25,14 +26,138 @@
 		<div class="reveal">
 
 			<div class="slides">
-
-				<section>
-					<h3>Default</h3>
+				
+				<section data-transition="convex-in concave-out">
+					<h3>TypeScript Innovations</h3>
+					<small>Andrej Skoryk</small>
 				</section>
+				<section>		
+					<section>
+						<p>What`s new?</p>					
+					</section>
+					<section>
+								<div>TypeScript 1.5</div>
 
-				<section>
-					<h3>Default</h3>
+								<small>Export Declarations</small>
+								<pre>
+									<code>
+export interface Stream { ... }
+export function write(stream: Stream, data: string) { ... }</code>
+								</pre>								
+							
+						</section>
+						<section>
+								<small>Export * can be used to re-export all exports of another module. This is useful for creating modules that aggregate the exports of several other modules.</small>
+								<pre>
+										<code>
+export function transform(s: string): string { ... }
+export * from "./mod1";
+export * from "./mod2";</code>
+						</pre>
+						</section>
+						
+						<section>
+							<small>Destructuring in declarations and assignments</small>
+							<pre>
+									<code>
+let o = {
+	a: "foo",
+	b: 12,
+	c: "bar"
+}
+let {a, b} = o;
+
+var {w, x, ...remaining} = {w: 1, x: 2, y: 3, z: 4};
+console.log(w, x, remaining); // 1, 2, {y:3,z:4}
+
+let [, second, , fourth] = [1, 2, 3, 4];
+</code>
+							</pre>
+						</section>
+						
+						<section>
+								<small>Decorators</small>
+								<pre>
+<code>@sealed
+class Greeter {
+	greeting: string;
+	constructor(message: string) {
+		this.greeting = message;
+	}
+	greet() {
+		return "Hi, " + this.greeting;
+	}
+}
+function sealed(constructor: Function) {
+    Object.seal(constructor);
+    Object.seal(constructor.prototype);
+}</code></pre>
+						</section>
+						<section>
+								<div>TypeScript 1.6</div>
+						</section>
+						
+
+						<section>
+							<small>Intersection types</small>
+							<small>An intersection type combines multiple types into one. This allows you to add together existing types to get a single type that has all the features you need. For example, Person & Serializable & Loggable is a Person and Serializable and Loggable. That means an object of this type will have all members of all three types.</small>
+							<pre>
+									<code  data-trim data-noescape>
+function extend<T, U>(first: T, second: U): T & U {
+		let result = <T & U>{};
+		for (let id in first) {
+			(<any>result)[id] = (<any>first)[id];
+		}
+		for (let id in second) {
+			if (!result.hasOwnProperty(id)) {
+				(<any>result)[id] = (<any>second)[id];
+			}
+		}
+		return result;
+	}
+	
+	class Person {
+		constructor(public name: string) { }
+	}
+	interface Loggable {
+		log(): void;
+	}
+	class ConsoleLogger implements Loggable {
+		log() {
+			// ...
+		}
+	}
+	var jim = extend(new Person("Jim"), new ConsoleLogger());
+	var n = jim.name;
+	jim.log();
+							
+									</code>
+							</pre>
+						</section>
+						<section>
+								<small>String Literal Types</small>
+
+						</section>
+
+						<section>
+								<div>Intersection types</div>
+						</section>
+						<section>
+
+						
+							Allows enum members to contain string initializers.
+							<pre>
+								<code data-trim data-noescape>enum Colors {
+	Red = "RED", 
+	Green = "GREEN",
+	Blue = "BLUE"
+} 
+								</code>
+							</pre>
+							<small>The caveat is that string-initialized enums can’t be reverse-mapped to get the original enum member name. In other words, you can’t write Colors["RED"] to get the string "Red".</small>
+						
 				</section>
+			</section>
 
 				<section data-transition="zoom">
 					<h3>data-transition: zoom</h3>
@@ -93,7 +218,15 @@
 				// transition: 'slide',
 				// transitionSpeed: 'slow',
 				// backgroundTransition: 'slide'
+
+				dependencies: [
+					// Syntax highlight for <code> elements
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				]
 			});
+
+			
+
 
 		</script>
 
