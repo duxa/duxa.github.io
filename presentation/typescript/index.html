@@ -136,12 +136,292 @@ function extend<T, U>(first: T, second: U): T & U {
 						</section>
 						<section>
 								<small>String Literal Types</small>
+								<pre>
+									<code>
+type Easing = "ease-in" | "ease-out" | "ease-in-out";
+class UIElement {
+	animate(dx: number, dy: number, easing: Easing) {
+		if (easing === "ease-in") {
+			// ...
+		}
+		else if (easing === "ease-out") {
+		}
+		else if (easing === "ease-in-out") {
+		}
+		else {
+			// error! should not pass null or undefined.
+		}
+	}
+}
 
+let button = new UIElement();
+button.animate(0, 0, "ease-in");
+button.animate(0, 0, "uneasy"); // error: "uneasy" is not allowed here
+									</code>
+								</pre>
 						</section>
 
 						<section>
-								<div>Intersection types</div>
+								<small>Abstract classes and methods	</small>
+								<pre>
+										<code>abstract class Base {
+	abstract getThing(): string;
+	getOtherThing() { return 'hello'; }
+}
+
+let x = new Base(); // Error, 'Base' is abstract
+
+// Error, must either be 'abstract' or implement concrete 'getThing'
+class Derived1 extends Base { }
+
+class Derived2 extends Base {
+	getThing() { return 'hello'; }
+	foo() {
+		super.getThing();
+	}
+}
+											</code>
+											</pre>	
 						</section>
+<section>
+		<div>TypeScript 1.6</div>
+</section>
+
+<section>
+		<small>Async/await support in ES6</small>
+		<pre>
+				<code>
+async function printDelayed(elements: string[]) {
+	for (const element of elements) {
+		await delay(200);
+		console.log(element);
+	}
+}
+
+async function delay(milliseconds: number) {
+	return new Promise<void>(resolve => {
+		setTimeout(resolve, milliseconds);
+	});
+}
+
+printDelayed(["Hello", "beautiful", "asynchronous", "world"]).then(() => {
+	console.log();
+	console.log("Printed every element!");
+});
+					</code>
+					</pre>
+</section>
+
+<section>
+		<small>This-typing</small>
+		<small>It is a common pattern to return the current object (i.e. this) from a method to create fluent-style APIs. For instance, consider the following BasicCalculator module:</small>
+		<pre>
+			<code>export default class BasicCalculator {
+	public constructor(protected value: number = 0) { }
+
+	public currentValue(): number {
+		return this.value;
+	}
+	public add(operand: number) {
+		this.value += operand;
+		return this;
+	}
+	public subtract(operand: number) {
+		this.value -= operand;
+		return this;
+	}
+	public multiply(operand: number) {
+		this.value *= operand;
+		return this;
+	}
+	public divide(operand: number) {
+		this.value /= operand;
+		return this;
+	}
+}
+
+import calc from "./BasicCalculator";
+
+let v = new calc(2)
+    .multiply(5)
+    .add(1)
+    .currentValue();
+			</code>
+		</pre>
+</section>
+
+<section>
+		<div>TypeScript 2.0</div>
+</section>
+
+<section>
+	<small>The never type</small>
+	<small>TypeScript 2.0 introduces a new primitive type never. The never type represents the type of values that never occur. Specifically, never is the return type for functions that never return and never is the type of variables under type guards that are never true.</small>
+	<pre>
+			<code>
+	function infiniteLoop(): never {
+		while (true) {
+		}
+	}
+				</code>
+	</pre>
+</section>
+
+<section>
+		<div>TypeScript 2.1</div>
+</section>
+
+<section>
+		<small>"keyof" and Lookup Types</small>
+		
+		<pre>
+			<code  data-trim data-noescape>
+interface Person {
+	name: string;
+	age: number;
+	location: string;
+}
+
+type K1 = keyof Person; // "name" | "age" | "location"
+type K2 = keyof Person[];  // "length" | "push" | "pop" | "concat" | ...
+type K3 = keyof { [x: string]: Person };  // string
+
+function getProperty<T, K extends keyof T>(obj: T, key: K) {
+	return obj[key];  // Inferred type is T[K]
+}
+	
+function setProperty<T, K extends keyof T>(obj: T, key: K, value: T[K]) {
+	obj[key] = value;
+}
+			</code>
+		</pre>
+</section>
+
+<section>
+	<small>Mapped Types</small>
+	<small>One common task is to take an existing type and make each of its properties entirely optional. Let’s say we have a Person</small>
+
+	<pre>
+		<code   data-noescape>
+interface Person {
+	name: string;
+	age: number;
+	location: string;
+}
+
+interface PersonReadonly {
+    readonly name: string;
+    readonly age: number;
+}
+
+// Keep types the same, but make each property to be read-only.
+type Readonly<T> = {
+    readonly [P in keyof T]: T[P];
+};
+type PersonReadonly = Readonly<Person>;
+		</code>
+	</pre>
+</section>
+
+<section>
+		<small>Object Spread and Rest</small>
+		<pre>
+			<code>
+let obj = { x: 1, y: 1, z: 1 };
+let { z, ...obj1 } = obj;
+obj1; // {x: number, y:number};
+		</code>
+	</pre>
+</section>
+
+<section>
+<div>TypeScript 2.2</div>
+</section>
+
+<section>
+	<div>Support for Mix-in classes</div>
+	<pre>
+		<code data-noescape>
+// Disposable Mixin
+class Disposable {
+	isDisposed: boolean;
+	dispose() {
+		this.isDisposed = true;
+	}
+
+}
+
+// Activatable Mixin
+class Activatable {
+	isActive: boolean;
+	activate() {
+		this.isActive = true;
+	}
+	deactivate() {
+		this.isActive = false;
+	}
+}
+
+class SmartObject implements Disposable, Activatable {
+	constructor() {
+		setInterval(() => console.log(this.isActive + " : " + this.isDisposed), 500);
+	}
+
+	interact() {
+		this.activate();
+	}
+
+	// Disposable
+	isDisposed: boolean = false;
+	dispose: () => void;
+	// Activatable
+	isActive: boolean = false;
+	activate: () => void;
+	deactivate: () => void;
+}
+applyMixins(SmartObject, [Disposable, Activatable]);
+
+let smartObj = new SmartObject();
+setTimeout(() => smartObj.interact(), 1000);
+
+////////////////////////////////////////
+// In your runtime library somewhere
+////////////////////////////////////////
+
+function applyMixins(derivedCtor: any, baseCtors: any[]) {
+	baseCtors.forEach(baseCtor => {
+		Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
+			derivedCtor.prototype[name] = baseCtor.prototype[name];
+		});
+	});
+}
+		</code>
+	</pre>
+</section>
+<section>
+<small>Object type</small>
+<pre>
+		<code data-noescape>
+declare function create(o: object | null): void;
+
+create({ prop: 0 }); // OK
+create(null); // OK
+
+create(42); // Error
+create("string"); // Error
+create(false); // Error
+create(undefined); // Error		
+
+		</code>
+		</pre>
+
+
+</section>
+
+<section>
+		<div>TypeScript 2.4</div>
+</section>
+						
 						<section>
 
 						
@@ -159,9 +439,70 @@ function extend<T, U>(first: T, second: U): T & U {
 				</section>
 			</section>
 
-				<section data-transition="zoom">
-					<h3>data-transition: zoom</h3>
-				</section>
+
+
+
+
+<section data-transition="convex-in concave-out">
+
+
+					
+</section>
+
+<section data-transition="convex-in concave-out">
+		
+			<small>var vs let</small>
+			<small>Variable capturing quirks</small>
+<pre>
+	<code>
+for (var i = 0; i < 10; i++) {
+	setTimeout(function() { console.log(i); }, 100 * i);
+}
+
+for (var i = 0; i < 10; i++) {
+	// capture the current state of 'i'
+	// by invoking a function with its current value
+	(function(i) {
+		setTimeout(function() { console.log(i); }, 100 * i);
+	})(i);
+}
+
+for (let i = 0; i < 10 ; i++) {
+	setTimeout(function() { console.log(i); }, 100 * i);
+}
+	</code>
+</pre>
+
+							
+</section>
+
+<section>
+		<small>Block-scoping</small>
+
+		<pre>
+			<code>
+function f(input: boolean) {
+	let a = 100;
+
+	if (input) {
+		// Still okay to reference 'a'
+		let b = a + 1;
+		return b;
+	}
+
+	// Error: 'b' doesn't exist here
+	return b;
+}				
+			</code>
+		</pre>
+</section>
+
+<section>
+	
+</section>
+
+
+
 
 				<section data-transition="zoom-in fade-out">
 					<h3>data-transition: zoom-in fade-out</h3>
