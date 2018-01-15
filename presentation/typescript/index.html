@@ -440,21 +440,12 @@ create(undefined); // Error
 			</section>
 
 
-
-
-
 <section data-transition="convex-in concave-out">
-
-
-					
-</section>
-
-<section data-transition="convex-in concave-out">
-		
+		<section data-transition="convex-in concave-out">		
 			<small>var vs let</small>
 			<small>Variable capturing quirks</small>
 <pre>
-	<code>
+	<code data-trim data-noescape>
 for (var i = 0; i < 10; i++) {
 	setTimeout(function() { console.log(i); }, 100 * i);
 }
@@ -474,13 +465,13 @@ for (let i = 0; i < 10 ; i++) {
 </pre>
 
 							
-</section>
 
+</section>
 <section>
 		<small>Block-scoping</small>
 
 		<pre>
-			<code>
+			<code data-trim data-noescape>
 function f(input: boolean) {
 	let a = 100;
 
@@ -496,53 +487,132 @@ function f(input: boolean) {
 			</code>
 		</pre>
 </section>
-
 <section>
+	<small>Arrow Functions</small>
 	
+			<li>You don't need to keep typing function</li>
+			<li>It lexically captures the meaning of this</li>
+			<li>It lexically captures the meaning of arguments</li>
+			http://www.typescriptlang.org/docs/handbook/functions.html
+			
+	
+	<pre>
+		<code data-trim data-noescape>
+				function Person(age) {
+					this.age = age;
+					this.growOld = function() {
+						this.age++;
+					}
+				}
+				var person = new Person(1);
+				setTimeout(person.growOld,1000);
+				
+				setTimeout(function() { console.log(person.age); },2000); // 1, should have been 2
+		</code>
+	</pre>
+
+</section>
+<section>
+		<div>Index Signatures</div>
+		<pre>
+			<code data-trim data-noescape>
+					Fields: { "@Id": string, [key: string]: string }[];
+
+					this.Fields = this.Item!.map(item => {
+						let field: { "@Id": string, [key: string]: string } = { "@Id": item["@Id"] };						
+						return field;
+					});
+
+			</code>
+		</pre>
+</section>
+<section>
+		<small>Accessors</small>
+		<pre>
+				<code data-trim data-noescape>
+class Employee {
+	private _fullName: string;
+
+	get fullName(): string {
+		return this._fullName;
+	}
+
+	set fullName(newName: string) {
+		if (passcode && passcode == "secret passcode") {
+			this._fullName = newName;
+		}
+		else {
+			console.log("Error: Unauthorized update of employee!");
+		}
+	}
+}
+
+let employee = new Employee();
+employee.fullName = "Bob Smith";
+if (employee.fullName) {
+	console.log(employee.fullName);
+}
+					</code>
+					</pre>
+
 </section>
 
+<section>
+		<small>Static Properties</small>
+		<pre>
+				<code data-trim data-noescape>
+		
+class Grid {
+	static origin = {x: 0, y: 0};
+	calculateDistanceFromOrigin(point: {x: number; y: number;}) {
+		let xDist = (point.x - Grid.origin.x);
+		let yDist = (point.y - Grid.origin.y);
+		return Math.sqrt(xDist * xDist + yDist * yDist) / this.scale;
+	}
+	constructor (public scale: number) { }
+}
 
+let grid1 = new Grid(1.0);  // 1x scale
+let grid2 = new Grid(5.0);  // 5x scale
 
+console.log(grid1.calculateDistanceFromOrigin({x: 10, y: 10}));
+console.log(grid2.calculateDistanceFromOrigin({x: 10, y: 10}));	
+						</code>
+		</pre>
 
-				<section data-transition="zoom-in fade-out">
-					<h3>data-transition: zoom-in fade-out</h3>
-				</section>
+</section>
 
-				<section>
-					<h3>Default</h3>
-				</section>
+<section>
+		<small>String Interpolation</small>
+		<pre>
+				<code data-trim data-noescape>
+var lyrics = 'Never gonna give you up';
+var html = '<div>' + lyrics + '</div>';
 
-				<section data-transition="convex">
-					<h3>data-transition: convex</h3>
-				</section>
+var lyrics = 'Never gonna give you up';
+var html = `<div>${lyrics}</div>`;
 
-				<section data-transition="convex-in concave-out">
-					<h3>data-transition: convex-in concave-out</h3>
-				</section>
+console.log(`1 and 1 make ${1 + 1}`);
 
-				<section>
-					<section data-transition="zoom">
-						<h3>Default</h3>
-					</section>
-					<section data-transition="concave">
-						<h3>data-transition: concave</h3>
-					</section>
-					<section data-transition="convex-in fade-out">
-						<h3>data-transition: convex-in fade-out</h3>
-					</section>
-					<section>
-						<h3>Default</h3>
-					</section>
-				</section>
+var lyrics = `Never gonna give you up
+Never gonna let you down`;
+				</code>
+		<pre>
+</section>
 
-				<section data-transition="none">
-					<h3>data-transition: none</h3>
-				</section>
+</section>
 
-				<section>
-					<h3>Default</h3>
-				</section>
-
+<section>
+	<div>Sources</div>
+	<ul>
+	<li> https://basarat.gitbooks.io/typescript/</li>
+	<li> http://www.typescriptlang.org/docs/home.html</li>
+	<li> https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md</li>
+	<li> https://github.com/wycats/javascript-decorators</li>
+	<li> https://github.com/Microsoft/TypeScript/issues/2242</li>
+	<li> http://typescript-lang.ru/docs/</li>	
+</ul>
+</section>
 			</div>
 
 		</div>
