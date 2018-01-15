@@ -6,4 +6,5 @@ summary:    TypeScript Base
 show: true
 ---
 
-Here I add link for presentation typescript
+My version presentation of typescript
+Link: https://duxa.github.io/presentation/typescript/index.html#/
