@@ -1,12 +1,12 @@
 {% for page in site.pages %}
     {% if page.tags contains "about" %}
 		
-        <a href="{{ page.url }}">{{ page.title }}</a>
+        <a href="{{ page.url }}"><img src="/images/avatar.jpg" style="height: 20px; weight: 20px;" alt="avatar"/>{{ page.title }}</a>
     {% endif %}
 {% endfor %}
 {% for page in site.pages %}
     {% if page.tags contains "contact" %}
 		
-        <a href="{{ page.url }}"><img src="/images/avatar.jpg" style="height: 20px; weight: 20px;" alt="avatar"/> {{ page.title }}</a>
+        <a href="{{ page.url }}"> {{ page.title }}</a>
     {% endif %}
 {% endfor %}
