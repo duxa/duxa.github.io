@@ -1,7 +1,7 @@
 {% for page in site.pages %}
     {% if page.tags contains "about" %}
 		
-        <a href="{{ page.url }}"><img src="/images/avatar.jpg" style="height: 20px; weight: 20px;" alt="avatar"/>{{ page.title }}</a>
+        <a href="{{ page.url }}" style="position:relative;">{{ page.title }}<img src="/images/avatar.jpg" style="position: absolute; top: -15px; height: 50px; width: 50px;" alt="avatar"/></a>
     {% endif %}
 {% endfor %}
 {% for page in site.pages %}
