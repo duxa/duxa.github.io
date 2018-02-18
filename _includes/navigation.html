@@ -6,7 +6,7 @@
 {% endfor %}
 {% for page in site.pages %}
     {% if page.tags contains "contact" %}
-		<img src="/images/avatar.jpg" height="20px" weight="20px" alt="avatar">
+		<img src="/images/avatar.jpg" height="20px" width="20px" alt="avatar"/>
         <a href="{{ page.url }}">{{ page.title }}</a>
     {% endif %}
 {% endfor %}
