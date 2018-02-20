@@ -37,12 +37,12 @@
 	<div>Simple operators</div>
 	<pre>
 		<code data-trim data-noescape>Rx.Observable.from([1,2,3,4,5])
-				.map(x => x * 2)
-				.filter(x => x % 2 === 0)
-				.reduce((a, b) => a + b)
-				.subscribe(x => console.log(x),
-						   error => console.error(error),
-						   () => console.log('done'));
+.map(x => x * 2)
+.filter(x => x % 2 === 0)
+.reduce((a, b) => a + b)
+.subscribe(x => console.log(x),
+			error => console.error(error),
+			() => console.log('done'));
 		</code>
 	</pre>
 </section>
@@ -84,32 +84,32 @@ const subscription = mousedrag.subscribe((pos) => {
 	<div>AJAX</div>
 	<pre>
 		<code data-trim data-noescape>export function load(url: string) {
-					return Observable.create(observer => {
-						let xhr = new XMLHttpRequest();
-				
-						let onLoad = () => {
-							if(xhr.status === 200) {
-								let data = JSON.parse(xhr.responseText);
-								observer.next(data);
-								observer.complete();
-							} else {
-								observer.error(xhr.statusText);
-							}
-						};
-				
-						xhr.addEventListener("load", onLoad);
-				
-						xhr.open("GET", url);
-						xhr.send();
-				
-						return () =>  {
-							console.log("cleanup");
-							xhr.removeEventListener("load", onLoad);
-							xhr.abort();
-						}
-				
-					}).retryWhen(retryStrategy({attempts: 3, delay: 1500}));
-				}
+	return Observable.create(observer => {
+		let xhr = new XMLHttpRequest();
+
+		let onLoad = () => {
+			if(xhr.status === 200) {
+				let data = JSON.parse(xhr.responseText);
+				observer.next(data);
+				observer.complete();
+			} else {
+				observer.error(xhr.statusText);
+			}
+		};
+
+		xhr.addEventListener("load", onLoad);
+
+		xhr.open("GET", url);
+		xhr.send();
+
+		return () =>  {
+			console.log("cleanup");
+			xhr.removeEventListener("load", onLoad);
+			xhr.abort();
+		}
+
+	}).retryWhen(retryStrategy({attempts: 3, delay: 1500}));
+}
 		</code>
 	</pre>
 </section>
@@ -117,6 +117,19 @@ const subscription = mousedrag.subscribe((pos) => {
 <section>
 	<div>Subject</div>
 	<small>Subject implements both an Observable and Observer. An Observer subscribes to an Observable. An Observerable produces sequences that Observers receive.</small>
+	<pre>
+		<code>const subject = new Rx.Subject();
+
+subject.subscribe(x => console.log(x),
+					error => console.error(error),
+					() => console.log('done'))
+
+subject.next('a');
+subject.next('b');
+subject.complete();
+		</code>
+	</pre>
+
 </section>
 
 
