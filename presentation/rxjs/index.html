@@ -33,7 +33,7 @@
 				</section>
 				<section>		
 					<section>
-						<p>What`s new?</p>					
+						<p></p>					
 					</section>
 					<section>
 								<div>TypeScript 1.5</div>
@@ -41,8 +41,33 @@
 								<small>Export Declarations</small>
 								<pre>
 									<code>
-export interface Stream { ... }
-export function write(stream: Stream, data: string) { ... }</code>
+										const { fromEvent } = Rx.Observable;
+										const target = document.querySelector('.box');
+										
+										const mouseup = fromEvent(target, 'mouseup');
+										const mousemove = fromEvent(document, 'mousemove');
+										const mousedown = fromEvent(target, 'mousedown');
+										
+										const mousedrag = mousedown.selectMany((md) => {
+										  const startX = md.clientX + window.scrollX,
+												startY = md.clientY + window.scrollY,
+												startLeft = parseInt(md.target.style.left, 10) || 0,
+												startTop = parseInt(md.target.style.top, 10) || 0;
+										  
+										  return mousemove.map((mm) => {
+											mm.preventDefault();
+											
+											return {
+											  left: startLeft + mm.clientX - startX,
+											  top: startTop + mm.clientY - startY
+											};
+										  }).takeUntil(mouseup);
+										});
+										
+										const subscription = mousedrag.subscribe((pos) => {
+										  target.style.top = pos.top + 'px';
+										  target.style.left = pos.left + 'px';
+										});</code>
 								</pre>								
 							
 						</section>
@@ -183,424 +208,6 @@ class Derived2 extends Base {
 											</code>
 											</pre>	
 						</section>
-<section>
-		<div>TypeScript 1.6</div>
-</section>
-
-<section>
-		<small>Async/await support in ES6</small>
-		<pre>
-				<code>
-async function printDelayed(elements: string[]) {
-	for (const element of elements) {
-		await delay(200);
-		console.log(element);
-	}
-}
-
-async function delay(milliseconds: number) {
-	return new Promise<void>(resolve => {
-		setTimeout(resolve, milliseconds);
-	});
-}
-
-printDelayed(["Hello", "beautiful", "asynchronous", "world"]).then(() => {
-	console.log();
-	console.log("Printed every element!");
-});
-					</code>
-					</pre>
-</section>
-
-<section>
-		<small>This-typing</small>
-		<small>It is a common pattern to return the current object (i.e. this) from a method to create fluent-style APIs. For instance, consider the following BasicCalculator module:</small>
-		<pre>
-			<code>export default class BasicCalculator {
-	public constructor(protected value: number = 0) { }
-
-	public currentValue(): number {
-		return this.value;
-	}
-	public add(operand: number) {
-		this.value += operand;
-		return this;
-	}
-	public subtract(operand: number) {
-		this.value -= operand;
-		return this;
-	}
-	public multiply(operand: number) {
-		this.value *= operand;
-		return this;
-	}
-	public divide(operand: number) {
-		this.value /= operand;
-		return this;
-	}
-}
-
-import calc from "./BasicCalculator";
-
-let v = new calc(2)
-    .multiply(5)
-    .add(1)
-    .currentValue();
-			</code>
-		</pre>
-</section>
-
-<section>
-		<div>TypeScript 2.0</div>
-</section>
-
-<section>
-	<small>The never type</small>
-	<small>TypeScript 2.0 introduces a new primitive type never. The never type represents the type of values that never occur. Specifically, never is the return type for functions that never return and never is the type of variables under type guards that are never true.</small>
-	<pre>
-			<code>
-	function infiniteLoop(): never {
-		while (true) {
-		}
-	}
-				</code>
-	</pre>
-</section>
-
-<section>
-		<div>TypeScript 2.1</div>
-</section>
-
-<section>
-		<small>"keyof" and Lookup Types</small>
-		
-		<pre>
-			<code  data-trim data-noescape>
-interface Person {
-	name: string;
-	age: number;
-	location: string;
-}
-
-type K1 = keyof Person; // "name" | "age" | "location"
-type K2 = keyof Person[];  // "length" | "push" | "pop" | "concat" | ...
-type K3 = keyof { [x: string]: Person };  // string
-
-function getProperty<T, K extends keyof T>(obj: T, key: K) {
-	return obj[key];  // Inferred type is T[K]
-}
-	
-function setProperty<T, K extends keyof T>(obj: T, key: K, value: T[K]) {
-	obj[key] = value;
-}
-			</code>
-		</pre>
-</section>
-
-<section>
-	<small>Mapped Types</small>
-	<small>One common task is to take an existing type and make each of its properties entirely optional. Let’s say we have a Person</small>
-
-	<pre>
-		<code   data-noescape>
-interface Person {
-	name: string;
-	age: number;
-	location: string;
-}
-
-interface PersonReadonly {
-    readonly name: string;
-    readonly age: number;
-}
-
-// Keep types the same, but make each property to be read-only.
-type Readonly<T> = {
-    readonly [P in keyof T]: T[P];
-};
-type PersonReadonly = Readonly<Person>;
-		</code>
-	</pre>
-</section>
-
-<section>
-		<small>Object Spread and Rest</small>
-		<pre>
-			<code>
-let obj = { x: 1, y: 1, z: 1 };
-let { z, ...obj1 } = obj;
-obj1; // {x: number, y:number};
-		</code>
-	</pre>
-</section>
-
-<section>
-<div>TypeScript 2.2</div>
-</section>
-
-<section>
-	<div>Support for Mix-in classes</div>
-	<pre>
-		<code data-noescape>
-// Disposable Mixin
-class Disposable {
-	isDisposed: boolean;
-	dispose() {
-		this.isDisposed = true;
-	}
-
-}
-
-// Activatable Mixin
-class Activatable {
-	isActive: boolean;
-	activate() {
-		this.isActive = true;
-	}
-	deactivate() {
-		this.isActive = false;
-	}
-}
-
-class SmartObject implements Disposable, Activatable {
-	constructor() {
-		setInterval(() => console.log(this.isActive + " : " + this.isDisposed), 500);
-	}
-
-	interact() {
-		this.activate();
-	}
-
-	// Disposable
-	isDisposed: boolean = false;
-	dispose: () => void;
-	// Activatable
-	isActive: boolean = false;
-	activate: () => void;
-	deactivate: () => void;
-}
-applyMixins(SmartObject, [Disposable, Activatable]);
-
-let smartObj = new SmartObject();
-setTimeout(() => smartObj.interact(), 1000);
-
-////////////////////////////////////////
-// In your runtime library somewhere
-////////////////////////////////////////
-
-function applyMixins(derivedCtor: any, baseCtors: any[]) {
-	baseCtors.forEach(baseCtor => {
-		Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
-			derivedCtor.prototype[name] = baseCtor.prototype[name];
-		});
-	});
-}
-		</code>
-	</pre>
-</section>
-<section>
-<small>Object type</small>
-<pre>
-		<code data-noescape>
-declare function create(o: object | null): void;
-
-create({ prop: 0 }); // OK
-create(null); // OK
-
-create(42); // Error
-create("string"); // Error
-create(false); // Error
-create(undefined); // Error		
-
-		</code>
-		</pre>
-
-
-</section>
-
-<section>
-		<div>TypeScript 2.4</div>
-</section>
-						
-						<section>
-
-						
-							Allows enum members to contain string initializers.
-							<pre>
-								<code data-trim data-noescape>enum Colors {
-	Red = "RED", 
-	Green = "GREEN",
-	Blue = "BLUE"
-} 
-								</code>
-							</pre>
-							<small>The caveat is that string-initialized enums can’t be reverse-mapped to get the original enum member name. In other words, you can’t write Colors["RED"] to get the string "Red".</small>
-						
-				</section>
-			</section>
-
-
-<section data-transition="convex-in concave-out">
-		<section data-transition="convex-in concave-out">		
-			<small>var vs let</small>
-			<small>Variable capturing quirks</small>
-<pre>
-	<code data-trim data-noescape>
-for (var i = 0; i < 10; i++) {
-	setTimeout(function() { console.log(i); }, 100 * i);
-}
-
-for (var i = 0; i < 10; i++) {
-	// capture the current state of 'i'
-	// by invoking a function with its current value
-	(function(i) {
-		setTimeout(function() { console.log(i); }, 100 * i);
-	})(i);
-}
-
-for (let i = 0; i < 10 ; i++) {
-	setTimeout(function() { console.log(i); }, 100 * i);
-}
-	</code>
-</pre>
-
-							
-
-</section>
-<section>
-		<small>Block-scoping</small>
-
-		<pre>
-			<code data-trim data-noescape>
-function f(input: boolean) {
-	let a = 100;
-
-	if (input) {
-		// Still okay to reference 'a'
-		let b = a + 1;
-		return b;
-	}
-
-	// Error: 'b' doesn't exist here
-	return b;
-}				
-			</code>
-		</pre>
-</section>
-<section>
-	<small>Arrow Functions</small>
-	
-	<ul>		
-	<li>You don't need to keep typing function</li>
-			<li>It lexically captures the meaning of this</li>
-			<li>It lexically captures the meaning of arguments</li>
-		</ul>
-			http://www.typescriptlang.org/docs/handbook/functions.html
-			
-	
-	<pre>
-		<code data-trim data-noescape>
-				function Person(age) {
-					this.age = age;
-					this.growOld = function() {
-						this.age++;
-					}
-				}
-				var person = new Person(1);
-				setTimeout(person.growOld,1000);
-				
-				setTimeout(function() { console.log(person.age); },2000); // 1, should have been 2
-		</code>
-	</pre>
-
-</section>
-<section>
-		<div>Index Signatures</div>
-		<pre>
-			<code data-trim data-noescape>
-					Fields: { "@Id": string, [key: string]: string }[];
-
-					this.Fields = this.Item!.map(item => {
-						let field: { "@Id": string, [key: string]: string } = { "@Id": item["@Id"] };						
-						return field;
-					});
-
-			</code>
-		</pre>
-</section>
-<section>
-		<small>Accessors</small>
-		<pre>
-				<code data-trim data-noescape>
-class Employee {
-	private _fullName: string;
-
-	get fullName(): string {
-		return this._fullName;
-	}
-
-	set fullName(newName: string) {
-		if (passcode && passcode == "secret passcode") {
-			this._fullName = newName;
-		}
-		else {
-			console.log("Error: Unauthorized update of employee!");
-		}
-	}
-}
-
-let employee = new Employee();
-employee.fullName = "Bob Smith";
-if (employee.fullName) {
-	console.log(employee.fullName);
-}
-					</code>
-					</pre>
-
-</section>
-
-<section>
-		<small>Static Properties</small>
-		<pre>
-				<code data-trim data-noescape>
-		
-class Grid {
-	static origin = {x: 0, y: 0};
-	calculateDistanceFromOrigin(point: {x: number; y: number;}) {
-		let xDist = (point.x - Grid.origin.x);
-		let yDist = (point.y - Grid.origin.y);
-		return Math.sqrt(xDist * xDist + yDist * yDist) / this.scale;
-	}
-	constructor (public scale: number) { }
-}
-
-let grid1 = new Grid(1.0);  // 1x scale
-let grid2 = new Grid(5.0);  // 5x scale
-
-console.log(grid1.calculateDistanceFromOrigin({x: 10, y: 10}));
-console.log(grid2.calculateDistanceFromOrigin({x: 10, y: 10}));	
-						</code>
-		</pre>
-
-</section>
-
-<section>
-		<small>String Interpolation</small>
-		<pre>
-				<code data-trim data-noescape>
-var lyrics = 'Never gonna give you up';
-var html = '<div>' + lyrics + '</div>';
-
-var lyrics = 'Never gonna give you up';
-var html = `<div>${lyrics}</div>`;
-
-console.log(`1 and 1 make ${1 + 1}`);
-
-var lyrics = `Never gonna give you up
-Never gonna let you down`;
-				</code>
-		<pre>
-</section>
 
 </section>
 
@@ -608,13 +215,9 @@ Never gonna let you down`;
 	<div>Sources</div>
 	<small>
 	<ul>
-		<li> <a href="https://basarat.gitbooks.io/typescript/"> https://basarat.gitbooks.io/typescript/</a></li>
-		<li> <a href="https://basarat.gitbooks.io/typescript/"> http://www.typescriptlang.org/docs/home.html</a></li>
-		<li> <a href="https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md">https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md</a></li>
-		<li> <a href="https://github.com/wycats/javascript-decorators">https://github.com/wycats/javascript-decorators</a></li>
-		<li> <a href="https://github.com/Microsoft/TypeScript/issues/2242">https://github.com/Microsoft/TypeScript/issues/2242</a></li>
-		<li> <a href="http://typescript-lang.ru/docs/">http://typescript-lang.ru/docs/</a></li>
-	
+		<li> <a href="https://www.youtube.com/watch?v=D8pdP2YjiFw"> Luxoft Training Center </a></li>
+		<li> <a href="https://www.youtube.com/watch?v=3szEGhrFrts"> «RxJS — мифы и реальность», Александр Грибанов</a></li>
+		<li> <a href="http://reactivex.io">http://reactivex.io</a></li>	
 	</ul>
 </small>
 </section>
