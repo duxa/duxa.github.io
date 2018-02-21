@@ -4,16 +4,44 @@ title: About Me
 permalink: /about/
 tags: about
 ---
-<div class="ui grid">
-  <div class="four wide column">
-    <img class="ui rounded image" src="/images/avatar.jpg">
+
+<div class="ui items">
+  <div class="item">
+    <div class="image">
+     <img class="ui rounded image" src="/images/avatar.jpg">
+    </div>
+    <div class="content">
+      <div class="header">Skoryk Andrii</div>
+      <div class="meta">        
+        <p>Ukraine (UA), Dnipro</p>
+      </div>
+      <div class="description">
+        <p>Email:​ ​ andrej.skorik@gmail.com </p>
+        <p>Skype:​ ​ andrej.skoryk </p>
+      </div>      
+    </div>
   </div>
-  
-  <div class="nine wide column">
-    <p>Skoryk Andrii</p>
-    <p>16.09.1986</p>
-    <p>Ukraine (UA)</p>
-    <p>Dnipro</p>
+</div>
+
+<div class="ui grid">  
+  <div class="one column row">
+    <div class="sixteen  wide column">
+      <b>Summary:</b>  
+      <ul class="ui list">
+        <li>Strong​ ​ knowledge​ ​ C#​ ​ and​ ​ .NET,​ ​ with​ ​ related​ ​ Microsoft​ ​ technologies</li>
+        <li>Expertise​ ​ in​ ​ full​ ​ project​ ​ life​ ​ cycle​ ​ development​ ​ from​ ​ implementation​ ​ to​ ​ integration</li>
+        <li>Solid​ ​ background​ ​ in​ ​ OOP​ ​ and​ ​ Software​ ​ Development</li>
+        <li>Experience​ ​ of​ ​ programming​ ​ encryption​ ​ algorithms​ ​ Database​ ​ design​ ​ and​ ​ analysis</li>
+      </ul>    
+    </div>  
+  </div>
+  <div class="sixteen wide column">
+    <b>Key​ ​ Skills: </b>
+    <ul class="ui list">
+      <li>​Program​ ​ Languages:  C#, JS </li>
+      <li>​Additional​ ​ skills:​ ​ Angular​ ​ 5,​ ​ KnockoutJS,​ ​ JQuery,​ ​ Docker  </li>
+      <li>​Databases:​ ​ MSSQL,​ ​ MYSQL,​ ​ MongoDB </li>
+    </ul>  
   </div>
 </div>
 
