@@ -8,7 +8,7 @@ tags: about
 <div class="ui items">
   <div class="item">
     <div class="image">
-     <img class="ui rounded image" src="/images/avatar.jpg">
+     <img class="ui rounded image" src="/images/face.jpg">
     </div>
     <div class="content">
       <div class="header">Skoryk Andrii</div>
