@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-
-import { SearchService } from './search.service';
+import { SearchService } from './../services/search.service';
 import { Subject } from 'rxjs/Subject';
+
+
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ import { Subject } from 'rxjs/Subject';
   styleUrls: ['./app.component.css'],
   providers: [SearchService]
 })
+
+
 export class AppComponent {
   results: Object;
   searchTerm$ = new Subject<string>();
@@ -20,5 +23,6 @@ export class AppComponent {
       });
   }
 }
+
 
 
