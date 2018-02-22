@@ -23,10 +23,8 @@ tags: about
   </div>
 </div>
 
-<div class="ui grid">  
-  <div class="one column row">
-    
-  </div>
+<div class="ui grid"> 
+  
   <div class="sixteen wide column">
     <b>Key​ ​ Skills: </b>
     <ul class="ui list">
