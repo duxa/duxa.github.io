@@ -25,15 +25,7 @@ tags: about
 
 <div class="ui grid">  
   <div class="one column row">
-    <div class="sixteen  wide column">
-      <b>Summary:</b>  
-      <ul class="ui list">
-        <li>Strong​ ​ knowledge​ ​ C#​ ​ and​ ​ .NET,​ ​ with​ ​ related​ ​ Microsoft​ ​ technologies</li>
-        <li>Expertise​ ​ in​ ​ full​ ​ project​ ​ life​ ​ cycle​ ​ development​ ​ from​ ​ implementation​ ​ to​ ​ integration</li>
-        <li>Solid​ ​ background​ ​ in​ ​ OOP​ ​ and​ ​ Software​ ​ Development</li>
-        <li>Experience​ ​ of​ ​ programming​ ​ encryption​ ​ algorithms​ ​ Database​ ​ design​ ​ and​ ​ analysis</li>
-      </ul>    
-    </div>  
+    
   </div>
   <div class="sixteen wide column">
     <b>Key​ ​ Skills: </b>
