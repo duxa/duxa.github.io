@@ -18,6 +18,7 @@ tags: about
       <div class="description">
         <p>Email:​ ​ andrej.skorik@gmail.com </p>
         <p>Skype:​ ​ andrej.skoryk </p>
+		<p>My CV: <a href="/attachments/CV_Andrey_Skoryk.pdf">Download</a></p>
       </div>      
     </div>
   </div>
