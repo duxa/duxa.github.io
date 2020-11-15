@@ -111,9 +111,9 @@
           {{ site.email_title | default: "Email" }}: <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
         </p>
       {%- endif -%}
-      {%- if site.phone -%}
+      {%- if site.skype -%}
         <p>
-          {{ site.phone_title | default: "Phone" }}: {{ site.phone | escape }}
+          {{ site.skype_title | default: "Skype" }}: {{ site.skype | escape }}
         </p>
       {%- endif -%}
       {%- if site.website -%}
