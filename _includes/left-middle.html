@@ -1,8 +1,10 @@
 <div class="row clearfix layout layout-left">
-    <div class="col-xs-12 col-print-12">
-        {%- if include.item.dates -%} {{ include.item.dates }} {%- endif -%}
-        {%- if include.item.company -%} {{ include.item.company }} {%- endif -%}
-        {%- if include.item.job_title -%} {{ include.item.job_title }} {%- endif -%}
-        {%- if include.item.qualification -%} {{ include.item.qualification }} {%- endif -%} 
+    <div class="col-xs-12 col-print-12 details">
+      <p>
+        {%- if include.item.dates -%} {{ include.item.dates }} &nbsp; {%- endif -%}
+        {%- if include.item.company -%} {{ include.item.company }} &nbsp; {%- endif -%}
+        {%- if include.item.job_title -%} {{ include.item.job_title }} &nbsp; {%- endif -%}
+        {%- if include.item.qualification -%} {{ include.item.qualification }} &nbsp; {%- endif -%} 
+      </p>
     </div>
 </div>
