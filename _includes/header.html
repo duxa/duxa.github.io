@@ -100,10 +100,10 @@
       </ul>
       {%- if site.skype -%}
       <p>
-        {{ site.skype_title | default: "Skype" }}: {{ site.skype | escape }}
+        {{ site.skype_title | default: "Skype" }}: <b>{{ site.skype | escape }}</b>
       </p>      
     {%- endif -%}
-    
+
       {%- if site.email -%}
         <p>
           {{ site.email_title | default: "Email" }}: <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
