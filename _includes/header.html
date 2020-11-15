@@ -96,26 +96,20 @@
               <i class="fab fa-orcid" title="ORCiD link"></i>
             </a>
           </li>
-        {%- endif -%}
-        {% for link in site.additional_links %}
-          <li>
-            {% include a.html href=link.url class="button button--sacnite button--round-l" %}
-              <i class="fab {{ link.icon }}" title="{{ link.title | escape }}"></i>
-            </a>
-          </li>
-        {% endfor %}
+        {%- endif -%}      
       </ul>
-
+      {%- if site.skype -%}
+      <p>
+        {{ site.skype_title | default: "Skype" }}: {{ site.skype | escape }}
+      </p>      
+    {%- endif -%}
+    
       {%- if site.email -%}
         <p>
           {{ site.email_title | default: "Email" }}: <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
         </p>
       {%- endif -%}
-      {%- if site.skype -%}
-        <p>
-          {{ site.skype_title | default: "Skype" }}: {{ site.skype | escape }}
-        </p>
-      {%- endif -%}
+    
       {%- if site.website -%}
         <p>
           {{ site.website_title | default: "Web" }}: {% include a.html href=site.website %}{{ site.website | escape }}</a>
