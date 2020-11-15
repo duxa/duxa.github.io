@@ -48,7 +48,18 @@ about_profile_image: images/foto.png
 about_content: | # this will include new lines to allow paragraphs
  Hello, I am .Net developer
  <p><b>Skills:</b></p>
- <ul> <li>C# 7.0+, .Net Core, JS/Typescript</li>   <li>MongoDB, MySQL/MSSQL, Redis</li>  <li>GIT/TFS</li>  <li>ASP Net, Razor, Web Api, ASP net core, Swagger</li>  <li>Entity Framework, LINQ, TPL</li> </ul>
+ <ul> 
+    <li>C# 7.0+, .Net Core, JS/Typescript</li>   
+    <li>MongoDB, MySQL/MSSQL, Redis</li> 
+    <li>GIT/TFS</li>  
+    <li>ASP Net, Razor, Web Api, ASP net core, Swagger</li>  
+    <li>Entity Framework, LINQ, TPL</li>
+    <li>HTML5, LESS</li>
+    <li>Angular 9+, ngrx, rxjs</li>
+    <li>Azure functions, CosmosDb</li>
+    <li>RabbitMQ, Azure ServiceBus</li>
+    <lixUnit, NUnit</li>
+ </ul>
 
 # Projects Section
 # projects_title: Projects #(Use this to override about projects section title)
