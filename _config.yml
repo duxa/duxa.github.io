@@ -22,11 +22,10 @@ linkedin_username: duxa321
 
 # About Section
 # about_title: About Me
-about_profile_image: images/photo.png
+about_profile_image: images/foto.png
 about_content: | # this will include new lines to allow paragraphs
-  Hi, my name's Brett and I'm a senior network system administrator. As well as administrating systems I also have experience making software and web apps. I have worked at a number of companies gaining teamwork and leadership skills.
-
-  I am most skilled in: <mark>AWS</mark> and <mark>Eating Pizza</mark>
+  Hi, my name's Andrej. I'm a .Net/JS developer 
+  
 
 # Projects Section
 # projects_title: Projects
