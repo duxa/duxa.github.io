@@ -58,7 +58,7 @@ about_content: | # this will include new lines to allow paragraphs
     <li>Angular 9+, ngrx, rxjs</li>
     <li>Azure functions, CosmosDb</li>
     <li>RabbitMQ, Azure ServiceBus</li>
-    <lixUnit, NUnit</li>
+    <li>Unit, NUnit</li>
  </ul>
 
 # Projects Section
