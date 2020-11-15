@@ -1,12 +1,12 @@
 # Site
-repository: sproogen/resume-theme
+#repository: sproogen/resume-theme
 favicon: images/favicon.ico
 
 # Personal info
 name: Skoryk Andrej
 title: Senior .Net/JS
 email: duxa321@gmail.com
-website: www.github.com/sproogen/resume-theme
+#website: www.github.com/sproogen/resume-theme
 
 # Social links
 #twitter_username: facespics
@@ -26,24 +26,17 @@ about_profile_image: images/foto.png
 about_content: | # this will include new lines to allow paragraphs
   Hi, my name's Andrej. I'm a .Net/JS developer 
   
+# Experience Section
+# experience_title: Experience
 
 # Projects Section
 # projects_title: Projects
-
-# Experience Section
-# experience_title: Experience
 
 # Education Section
 # educaton_title: Education
 
 # More Section
 # more_title: A Little More About Me
-more_content: | # this will include new lines to allow paragraphs
-  Alongside my interests in networks and software engineering some of my other interests and hobbies are:
-   - Rock climbing
-   - Gaming
-   - Knitting
-   - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
 
 # Footer
 footer_show_references: true
