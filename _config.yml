@@ -1,117 +1,60 @@
-# Site settings
-title:       Andrej Skoryk
-email:       duxa321@gmail.com
-author:       Andrej Skoryk
-description: "Preparation for the interview"
-baseurl:     ""
-url:         "https://duxa.github.io"
-date_format: "%b %-d, %Y"
+# Site
+repository: sproogen/resume-theme
+favicon: images/favicon.ico
 
-# Google services
-google_verification:
-# Use either direct GA implementation or set up GTM account
-# - using both will skew your data (leave blank to not use at all)
-google_analytics:
-google_tag_manager:
-# Bing services
-bing_verification:
+# Personal info
+name: Brett Harris
+title: Senior Network System Administrator
+email: brett.h@email.co.uk
+website: www.github.com/sproogen/resume-theme
 
-# Optional features
-animated:             true
-show_related_posts:   false
-show_post_footers:    false
-show_social_icons:    false
-ajaxify_contact_form: false
-enable_mathjax: false
-extended_fonts: false
-enable_anchorjs: false
+# Social links
+twitter_username: facespics
+github_username:  sproogen
+# dribbble_username: jekyll
+# facebook_username: jekyll
+# flickr_username: jekyll
+instagram_username: chillwildlife
+linkedin_username: jameswgrant
+# pinterest_username: jekyll
+youtube_username: globalmtb
+# googleplus_username: +jekyll
 
-# Facebook Page integration
-# (for instant articles and other stuff)
-fb_page: false
-fb_page_id: 
+# About Section
+# about_title: About Me
+about_profile_image: images/profile.jpg
+about_content: | # this will include new lines to allow paragraphs
+  Hi, my name's Brett and I'm a senior network system administrator. As well as administrating systems I also have experience making software and web apps. I have worked at a number of companies gaining teamwork and leadership skills.
 
-# Disqus post comments
-# (leave blank to disable Disqus)
-disqus_shortname:
+  I am most skilled in: <mark>AWS</mark> and <mark>Eating Pizza</mark>
 
-# Facebook Comments plugin
-# (leave blank to disable Facebook Comments, otherwise set it to true)
-facebook_comments:
-facebook_appid:
-facebook_comments_number: 10
+# Projects Section
+# projects_title: Projects
 
-# Social icons
-github_username:
-bitbucket_username:
-stackoverflow_id:
-twitter_username:
-skype_username:
-steam_nickname:
-google_plus_id:
-linkedin_username:
-angellist_username:
-medium_id:
-bitcoin_url:
-paypal_url:
-flattr_button:
+# Experience Section
+# experience_title: Experience
 
-# Post sharing icons
-show_sharing_icons: false
-# Change to 'true' to enable individual icons
-share_facebook: false
-share_twitter: false
-share_googleplus: false
-share_linkedin: false
-share_digg: false
-share_tumblr: false
-share_reddit: false
-share_stumbleupon: false
-share_hackernews: false
+# Education Section
+# educaton_title: Education
 
-text:
-  pagination:
-    newer: 'Newer'
-    older: 'Older'
-  share_buttons:
-    text:         'Share this post!'
-    facebook:     'Share on Facebook'
-    twitter:      'Share on Twitter'
-    googleplus:   'Share on Google+'
-    linkedin:     'Share on LinkedIn'
-    digg:         'Share on Digg'
-    tumblr:       'Share on Tumblr'
-    reddit:       'Share on Reddit'
-    stumbleupon:  'Share on StumbleUpon'
-    hackernews:   'Share on Hacker News'
-  post:
-    updated:        'Updated'
-    minute_read:    'minute read'
-    related_posts:  'Related Posts'
-  index:
-    coming_soon: 'Coming soon...'
-  contact:
-    email:    'Email Address'
-    content:  'What would you like to say?'
-    subject:  'New submission!'
-    submit:   'Say Hello'
-    ajax:
-      sending:  'sending..'
-      sent:     'Message sent!'
-      error:    'Error!'
-  thanks: 'Thanks for contacting us. We will reply as soon as possible.'
-  og_locale: 'en_US'
+# More Section
+# more_title: A Little More About Me
+more_content: | # this will include new lines to allow paragraphs
+  Alongside my interests in networks and software engineering some of my other interests and hobbies are:
+   - Rock climbing
+   - Gaming
+   - Knitting
+   - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
+
+# Footer
+footer_show_references: true
 
 # Build settings
-markdown:     kramdown
-redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
-permalink:    pretty
-paginate:     4
+remote_theme: sproogen/resume-theme
+
 sass:
+  sass_dir: _sass
   style: compressed
-gems:
-  - jekyll-paginate
-  - jekyll-sitemap
-# https://github.com/jekyll/jekyll/issues/2938
-exclude: [vendor]
+
+plugins:
+ - jekyll-seo-tag
