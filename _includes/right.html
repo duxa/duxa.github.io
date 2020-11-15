@@ -6,14 +6,14 @@
     {{ include.item.description | strip | markdownify }}
   </div>
   <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+    {%- if include.item.dates -%} {{ include.item.dates }} {%- endif -%}
     {%- if include.item.name -%}<h4>{{ include.item.name }}</h4>{%- endif -%}
     {%- if include.item.company -%}<h4>{{ include.item.company }}</h4>{%- endif -%}
     {%- if include.item.link -%}
     {% include a.html href=include.item.link class="link" %}{{ include.item.link }}</a>
     {%- endif -%}
-    {%- if include.item.job_title -%}<p><b>{{ include.item.job_title }}</b></p>{%- endif -%}
-    {%- if include.item.qualification -%}<p><b>{{ include.item.qualification }}</b></p>{%- endif -%}
-    {%- if include.item.dates -%}<p>{{ include.item.dates }}</p>{%- endif -%}
+    {%- if include.item.job_title -%} <b>{{ include.item.job_title }}</b> {%- endif -%}
+    {%- if include.item.qualification -%} <b>{{ include.item.qualification }}</b> {%- endif -%}   
     {% for job in include.item.jobs %}
     <p><b>{{ job.title }}</b></p>
     <p>{{ job.dates }}</p>

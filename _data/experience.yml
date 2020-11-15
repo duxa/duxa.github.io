@@ -1,20 +1,20 @@
 # Experience template
-- layout: top-middle
+- layout: right
   company: SOLVVE
   job_title: Senior .Net/JS(TS)
   dates: 10.2018 - to present  
 
-- layout: top-middle
+- layout: right
   company: INSPECTRON
   job_title: .Net/JS
   dates: 10.2016 - 10.2018 
     
-- layout: top-middle
+- layout: right
   company: IIUA  
   job_title: .Net
   dates: 04.2016 - 10.2016
 
-- layout: top-middle
+- layout: right
   company: Ciklum  
   job_title: .Net Full stack
   dates: 10.2012 - 04.2016
