@@ -1,5 +1,18 @@
 <div class="container experience-container">
   <h3>{{ site.experience_title | default: "Experience" }}</h3>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-print-3">
+    Date:
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-print-3">
+    Company:
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-print-3">
+    Job title:
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-print-3">
+   
+  </div>      
+</div>
   {% for experience in site.data.experience %}
     {% include {{ experience.layout | default: 'left' | append: ".html" }} item=experience %}
   {% endfor %}
