@@ -11,8 +11,8 @@
   </div>
   <div class="col-xs-6 col-sm-4 col-md-3 col-print-3">
    
-  </div>      
-</div>
+  </div>   
+
   {% for experience in site.data.experience %}
     {% include {{ experience.layout | default: 'left' | append: ".html" }} item=experience %}
   {% endfor %}
