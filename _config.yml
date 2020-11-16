@@ -46,7 +46,7 @@ additional_links:
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/foto.png
 about_content: | # this will include new lines to allow paragraphs
- Hello, I am .Net developer
+ I am a .Net developer, I like working on interesting projects and solving non-standard tasks. My goal in development is at the cutting edge of technology and architectural approaches.
  <p><b>Skills:</b></p>
  <ul> 
     <li>C# 7.0+, .Net Core, JS/Typescript</li>   
@@ -60,6 +60,8 @@ about_content: | # this will include new lines to allow paragraphs
     <li>RabbitMQ, Azure ServiceBus</li>
     <li>xUnit, NUnit</li>
  </ul>
+
+ <p><b>English:<b> Intermediate </p>
 
 # Projects Section
 # projects_title: Projects #(Use this to override about projects section title)
