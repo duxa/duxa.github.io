@@ -1,10 +1,16 @@
 <div class="row clearfix layout layout-left">
     <div class="col-xs-12 col-print-12 details" style="font-size: 1.6rem;">
-      <p>
-        <div style="width: 160px; float:left;">{%- if include.item.dates -%} {{ include.item.dates }} &nbsp; {%- endif -%}</div>
-        <div style="width: 120px; float: left;">{%- if include.item.company -%} {{ include.item.company }} &nbsp; {%- endif -%}</div>
-        <div style="float: left;">{%- if include.item.job_title -%} {{ include.item.job_title }} &nbsp; {%- endif -%}</div>
-        <div style="float: left;">{%- if include.item.qualification -%} {{ include.item.qualification }} &nbsp; {%- endif -%}</div>
-      </p>
+      <div class="col-xs-6 col-sm-4 col-md-3 col-print-3">
+          {%- if include.item.dates -%} {{ include.item.dates }} &nbsp; {%- endif -%}
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-print-3">
+          {%- if include.item.company -%} {{ include.item.company }} &nbsp; {%- endif -%}
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-print-3">
+          {%- if include.item.job_title -%} {{ include.item.job_title }} &nbsp; {%- endif -%}
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-print-3">
+          {%- if include.item.qualification -%} {{ include.item.qualification }} &nbsp; {%- endif -%}
+        </div>      
     </div>
 </div>
