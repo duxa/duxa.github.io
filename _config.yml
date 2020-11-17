@@ -59,6 +59,7 @@ about_content: | # this will include new lines to allow paragraphs
     <li>Azure functions, CosmosDb</li>
     <li>RabbitMQ, Azure ServiceBus</li>
     <li>xUnit, NUnit</li>
+    <li>CQRS, Actors</li>
  </ul>
 
  <b>English:</b> Intermediate
