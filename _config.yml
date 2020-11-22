@@ -46,7 +46,10 @@ additional_links:
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/foto.png
 about_content: | # this will include new lines to allow paragraphs
- I am a .Net developer, I like working on interesting projects and solving non-standard tasks. My goal in development is at the cutting edge of technology and architectural approaches.
+ I am a .Net developer, I like working on interesting projects and solving non-standard tasks. My  professional goal is always to be on the top on the wave of technology and architectural approaches.
+ I am seeking a team to relize my potencial, to share experience and get new knowledge. 
+ I am open minded with great sense of humuor.
+
  <p><b>Skills:</b></p>
  <ul> 
     <li>C# 7.0+, .Net Core, JS/Typescript</li>   
