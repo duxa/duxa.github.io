@@ -16,6 +16,10 @@
 
       {%- include about.html -%}
 
+      {%- if site.more_content -%}
+        {%- include more.html -%}
+      {%- endif -%}
+
       {%- if site.data.experience.size > 0 -%}
         {%- include experience.html -%}
       {%- endif -%}
@@ -23,10 +27,6 @@
       {%- if site.data.education.size > 0 -%}
         {%- include education.html -%}
       {%- endif -%}
-
-      <!-- {%- if site.more_content -%}
-        {%- include more.html -%}
-      {%- endif -%} -->
 
     </div>
   </main>
