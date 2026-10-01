@@ -3,9 +3,11 @@ repository: Git repository where your resume will be hosted, only required if yo
 # favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
 
 # Personal info
-name: Skoryk Andrej
-title: Senior .Net/JS
+name: Andrej Skoryk
+title: Senior .NET / Full-Stack & Data Engineer
 email: duxa321@gmail.com
+phone: +380994302903
+location: Dnipro, Ukraine (UA)
 skype: andrej.skoryk
 website: duxa.github.io/cv/CV_Andrey_Skoryk.docx.pdf
 
@@ -46,26 +48,17 @@ additional_links:
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/foto.png
 about_content: | # this will include new lines to allow paragraphs
- I am a .Net developer, I like working on interesting projects and solving non-standard tasks. My  professional goal is always to be on the top on the wave of technology and architectural approaches.
- I am seeking a team to relize my potencial, to share experience and get new knowledge. 
- I am open minded with great sense of humuor.
+  Result-driven Senior Software & Data Engineer with over 14 years of professional experience, including 8+ years specializing in full-stack .NET development and Big Data solutions. Experienced in serverless cloud environments, high-throughput ETL pipelines, and database performance optimization. Combines .NET Core, microservices, and CQRS with Angular, Vue.js, and AWS data engineering. Background includes telematics, fintech data processing, and scalable SaaS solutions.
 
- <p><b>Skills:</b></p>
- <ul> 
-    <li>C# 7.0+, .Net Core, JS/Typescript</li>   
-    <li>MongoDB, MySQL/MSSQL, Redis</li> 
-    <li>GIT/TFS</li>  
-    <li>ASP Net, Razor, Web Api, ASP net core, Swagger</li>  
-    <li>Entity Framework, LINQ, TPL</li>
-    <li>HTML5, LESS</li>
-    <li>Angular 9+, ngrx, rxjs</li>
-    <li>Azure functions, CosmosDb</li>
-    <li>RabbitMQ, Azure ServiceBus</li>
-    <li>xUnit, NUnit</li>
-    <li>CQRS, Actors, Microservices</li>
- </ul>
+  **Data Engineering & Cloud:** AWS Glue, Apache Spark, PySpark, Step Functions, Lambda, Athena, Redshift, S3, DynamoDB, OpenSearch, Aurora PostgreSQL, EventBridge, SNS, Azure Functions, Cosmos DB, Azure Blob Storage, Service Bus.
 
- <b>English:</b> Intermediate
+  **Backend & Architecture:** C# 9.0+, .NET Core, ASP.NET Core Web API, EF Core, LINQ, TPL, microservices, CQRS, RabbitMQ, SignalR, stored procedures, query optimization, bottleneck analysis.
+
+  **Frontend & Web:** TypeScript, JavaScript, Angular 11+, Vue.js 3, NgRx, RxJS, Vuex, HTML5, LESS, Razor, Swagger.
+
+  **DevOps & Databases:** Kubernetes, Git, TFS, xUnit, NUnit, PostgreSQL, MSSQL, MySQL, MongoDB, Redis.
+
+  **Languages:** English (Intermediate, B1/B2); Ukrainian (Native).
 
 # Projects Section
 # projects_title: Projects #(Use this to override about projects section title)

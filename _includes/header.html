@@ -98,6 +98,12 @@
           </li>
         {%- endif -%}      
       </ul>
+      {%- if site.location -%}
+        <p>{{ site.location | escape }}</p>
+      {%- endif -%}
+      {%- if site.phone -%}
+        <p>{{ site.phone_title | default: "Phone" }}: <a href="tel:{{ site.phone | escape }}">{{ site.phone | escape }}</a></p>
+      {%- endif -%}
       {%- if site.skype -%}
       <p>
         {{ site.skype_title | default: "Skype" }}: <b>{{ site.skype | escape }}</b>

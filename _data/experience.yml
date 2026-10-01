@@ -1,21 +1,51 @@
-# Experience template
-- layout: left-middle
+# Experience
+- layout: left
+  company: TRINETIX
+  job_title: Senior .NET & Big Data Developer
+  dates: 03.2022 - Present
+  description: |
+    **Vision360 - Cloud-based Fintech Data Ingestion & Analytics Platform**
+
+    - Developed and optimized AWS Glue ETL jobs with PySpark to ingest, aggregate, and process multi-source financial data.
+    - Orchestrated serverless data workflows with AWS Step Functions, reducing pipeline latency and operational overhead.
+    - Built AWS Lambda functions for file-triggered processing and third-party integrations.
+    - Improved Amazon S3 performance through data partitioning, compression, and file-size optimization.
+
+    **Magnet - High-Load Workplace Reservation**
+
+    - Architected data pipelines for real-time and batch GPS tracking ingestion.
+    - Tuned database performance and analyzed bottlenecks to scale throughput under high-volume loads.
+    - Optimized queries and refactored stored procedures to achieve sub-second response times.
+
+- layout: left
   company: SOLVVE
-  job_title: Senior .Net/TS
-  dates: 10.2018 - to present  
+  job_title: Senior .NET / JS (TS) Engineer
+  dates: 10.2018 - 03.2022
+  description: |
+    **Edyo - SaaS eLearning Management System:** Designed Kubernetes microservices for file storage (AWS S3), notifications (AWS SES), and auditing; integrated WebRTC for live chat and peer-to-peer data streaming.
 
-- layout: left-middle
+    **PlayHera - Esports Tournament & Gaming Grid Platform:** Built double-elimination and round-robin tournament logic, live SignalR updates, and Azure media-processing pipelines for thumbnails and multi-resolution assets.
+
+    **Webscape - Enterprise ERP Client Applications:** Developed dynamic forms using custom XML-over-TCP/IP protocols, optimized Angular/Vue dashboards, and integrated SSO across internal products.
+
+- layout: left
   company: INSPECTRON
-  job_title: .Net/JS
-  dates: 10.2016 - 10.2018 
-    
-- layout: left-middle
-  company: IIUA  
-  job_title: .Net
-  dates: 04.2016 - 10.2016
+  job_title: .NET / JS Developer
+  dates: 10.2016 - 10.2018
+  description: |
+    **TennisMaster - Centralized Tournament Orchestration Platform:** Built API synchronization clients to aggregate court scheduling data from multiple external tennis systems.
 
-- layout: left-middle
-  company: Ciklum  
-  job_title: .Net/JS
+- layout: left
+  company: IIUA
+  job_title: .NET Developer
+  dates: 04.2016 - 10.2016
+  description: |
+    Developed core business logic components and modular API extensions using .NET framework technologies.
+
+- layout: left
+  company: CIKLUM
+  job_title: .NET Full-Stack Developer
   dates: 10.2012 - 04.2016
+  description: |
+    **Vision - Enterprise Brainstorming & Predictive Marketing Ad Platform:** Built targeting engines that matched audience demographics, interests, and income with suitable advertising channels.
   
