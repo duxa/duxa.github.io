@@ -15,11 +15,11 @@
 
 @media screen and (max-width: 768px) {
   .header-contianer div{
-    text-align: center;
+    text-align: left;
   }
 
   .header-right p {
-    text-align: center;
+    text-align: left;
   }
 
   .header-left {
@@ -72,14 +72,6 @@
 
       b {
         font-weight: 500;
-      }
-    }
-
-    @media screen and (max-width: 768px) {
-      text-align: center!important;
-
-      p {
-        text-align: center!important;
       }
     }
 
@@ -156,6 +148,10 @@
 
 .page-content {
   padding: 0;
+}
+
+.contact-details p {
+  text-align: left;
 }
 
 .contact a {
