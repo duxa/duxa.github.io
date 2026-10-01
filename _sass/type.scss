@@ -2,11 +2,12 @@ body {
   color: #24322e;
   font-family: Roboto, sans-serif;
   font-feature-settings: "kern", "liga", "pnum";
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-size: 1.1rem;
+  line-height: 1.7;
 
   @media print {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.45;
   }
 }
 
@@ -45,13 +46,13 @@ h1 {
 h2 {
   color: #397468;
   font-weight: 400;
-  font-size: 1.45rem;
+  font-size: 1.5rem;
 }
 
 h3 {
   font-weight: 500;
   color: #28675c;
-  font-size: 1.55rem;
+  font-size: 1.6rem;
   text-align: left;
   border-bottom: 1px solid #dfe6e0;
   padding-bottom: 9px;
@@ -65,17 +66,17 @@ h3 {
 h4 {
   color: #24322e;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom:3px;
 }
 
 p, ul {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   text-align: left;
 }
 
 li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
 }
 
 @media screen and (max-width: 767px) {
@@ -84,11 +85,21 @@ li {
   }
 
   h2 {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
   }
 
   h3 {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
+  }
+}
+
+@media print {
+  p, ul {
+    font-size: 0.95rem;
+  }
+
+  li {
+    margin-bottom: 0.15rem;
   }
 }
 

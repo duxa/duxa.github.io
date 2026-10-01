@@ -79,8 +79,8 @@
 
     p {
       margin-bottom: 3px;
-      font-size: 1.05rem;
-      line-height: 1.55;
+      font-size: 1.1rem;
+      line-height: 1.65;
       text-align: inherit;
       font-weight: 300;
 
@@ -191,6 +191,13 @@
 
   .layout {
     margin-top: 1.7rem;
+  }
+}
+
+@media print {
+  .layout .details p {
+    font-size: 0.95rem;
+    line-height: 1.45;
   }
 }
 
