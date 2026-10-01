@@ -5,10 +5,11 @@ repository: Git repository where your resume will be hosted, only required if yo
 # Personal info
 name: Andrej Skoryk
 title: Senior .NET / Full-Stack & Data Engineer
-email: duxa321@gmail.com
+email: andrej.skorik@gmail.com
 phone: +380994302903
 location: Dnipro, Ukraine (UA)
 skype: andrej.skoryk
+skype_title: Teams
 website: duxa.github.io/cv/CV_Andrej_Skoryk.pdf
 
 # Dark Mode (true/false/never)
@@ -46,20 +47,10 @@ additional_links:
 
 # About Section
 about_title: Professional Summary
+about_profile_image: images/foto.png
 about_content: | # this will include new lines to allow paragraphs
   Result-driven Senior Software & Data Engineer with over 14 years of professional experience, including 8+ years specializing in full-stack .NET development and Big Data solutions. Experienced in serverless cloud environments, high-throughput ETL pipelines, and database performance optimization. Combines .NET Core, microservices, and CQRS with Angular, Vue.js, and AWS data engineering. Background includes telematics, fintech data processing, and scalable SaaS solutions.
 
-  #### Technical Skills
-
-  - **Data Engineering & Cloud:** AWS Glue, Apache Spark, PySpark, Step Functions, Lambda, Athena, Redshift, S3, DynamoDB, OpenSearch, Aurora PostgreSQL, EventBridge, SNS, Azure Functions, Cosmos DB, Azure Blob Storage, Service Bus.
-  - **Backend & Architecture:** C# 9.0+, .NET Core, ASP.NET Core Web API, EF Core, LINQ, TPL, microservices, CQRS, RabbitMQ, SignalR, stored procedures, query optimization, bottleneck analysis.
-  - **Frontend & Web:** TypeScript, JavaScript, Angular 11+, Vue.js 3, NgRx, RxJS, Vuex, HTML5, LESS, Razor, Swagger.
-  - **DevOps & Databases:** Kubernetes, Git, TFS, xUnit, NUnit, PostgreSQL, MSSQL, MySQL, MongoDB, Redis.
-
-  #### Languages
-
-  - English: Intermediate (B1/B2)
-  - Ukrainian: Native
 
 # Projects Section
 # projects_title: Projects #(Use this to override about projects section title)
@@ -71,8 +62,17 @@ about_content: | # this will include new lines to allow paragraphs
 # education_title: Education #(Use this to override about education section title)
 
 # More Section
-# more_title: A Little More About Me #(Use this to override about more section title)
+more_title: Technical Skills
 more_content: | # this will include new lines to allow paragraphs
+  - **Data Engineering & Cloud:** AWS Glue, Apache Spark, PySpark, Step Functions, Lambda, Athena, Redshift, S3, DynamoDB, OpenSearch, Aurora PostgreSQL, EventBridge, SNS, Azure Functions, Cosmos DB, Azure Blob Storage, Service Bus.
+  - **Backend & Architecture:** C# 9.0+, .NET Core, ASP.NET Core Web API, EF Core, LINQ, TPL, microservices, CQRS, RabbitMQ, SignalR, stored procedures, query optimization, bottleneck analysis.
+  - **Frontend & Web:** TypeScript, JavaScript, Angular 11+, Vue.js 3, NgRx, RxJS, Vuex, HTML5, LESS, Razor, Swagger.
+  - **DevOps & Databases:** Kubernetes, Git, TFS, xUnit, NUnit, PostgreSQL, MSSQL, MySQL, MongoDB, Redis.
+
+  #### Languages
+
+  - English: Intermediate (B1/B2)
+  - Ukrainian: Native
  
 
 # Footer
